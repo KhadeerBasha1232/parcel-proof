@@ -1,0 +1,17 @@
+{
+  "name": "parcel-proof",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Photo + location proof of dispatch and delivery for packages",
+  "scripts": {
+    "install-both": "npm install && npm install --prefix frontend && node scripts/backend.mjs install",
+    "both": "concurrently -k -n api,web -c cyan,magenta \"npm:dev:backend\" \"npm:dev:frontend\"",
+    "both:https": "concurrently -k -n api,web -c cyan,magenta \"npm:dev:backend\" \"npm:dev:frontend:https\"",
+    "dev:backend": "node scripts/backend.mjs dev",
+    "dev:frontend": "npm run dev --prefix frontend",
+    "dev:frontend:https": "npm run dev:https --prefix frontend"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}
